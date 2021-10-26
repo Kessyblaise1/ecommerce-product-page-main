@@ -11,10 +11,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 
-  <!-- OWL CAROUSEL CDN -->
+  <!-- TINY SLIDER JS CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.helper.ie8.js"></script> 
+
+  <!-- LIGHTBOX CSS -->
+  <link rel="stylesheet" href="./css/lightbox.min.css">
 
 
   <!-- CUSTOM CSS FILE -->
@@ -54,10 +57,10 @@
     <section class="gallery">
       <div class="carousel">
         <div class="my-slider">
-          <div> <img src="./images/image-product-1.jpg" alt="product image"></div>
-          <div> <img src="./images/image-product-2.jpg" alt="product image"></div>
-          <div> <img src="./images/image-product-3.jpg" alt="product image"></div>
-          <div> <img src="./images/image-product-4.jpg" alt="product image"></div>
+          <div> <a href="./images/image-product-1.jpg"><img src="./images/image-product-1.jpg" alt="product image"></a> </div>
+          <div> <a href="./images/image-product-2.jpg"><img src="./images/image-product-2.jpg" alt="product image"></a> </div>
+          <div> <a href="./images/image-product-3.jpg"><img src="./images/image-product-3.jpg" alt="product image"></a> </div>
+          <div> <a href="./images/image-product-4.jpg"><img src="./images/image-product-4.jpg" alt="product image"></a> </div>
         </div>        
         <div class="next center"><svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg></div>
         <div class="prev center"><svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg></div>
@@ -104,5 +107,6 @@
 
 
   <script src="./js/main.js"></script>
+  <script src="./js/lightbox-plus-jquery.min.js"></script>
 </body>
 </html>
