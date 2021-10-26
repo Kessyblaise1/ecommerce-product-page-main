@@ -23,6 +23,9 @@ body{
     color: var(--text-color-light);
 }
 
+.attribution { font-size: 11px; text-align: center; padding: 20px;}
+.attribution a { color: hsl(228, 45%, 44%);}
+
 img{
     max-width: 100%;
     height: auto;
@@ -57,11 +60,42 @@ span{
     display: inline-block;
 }
 
+.lb-nav a.lb-next {
+    width: 64%;
+    right: 0;
+    float: right;
+    background: url(../images/next.png) right 48% no-repeat;
+    filter: alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transition: opacity .6s;
+    -moz-transition: opacity .6s;
+    -o-transition: opacity .6s;
+    transition: opacity .6s;
+}
+
+
+element.style {
+}
+.lb-nav a.lb-prev {
+    width: 34%;
+    left: 0;
+    float: left;
+    background: url(../images/prev.png) left 48% no-repeat;
+    filter: alpha(Opacity=0);
+    opacity: 0;
+    -webkit-transition: opacity .6s;
+    -moz-transition: opacity .6s;
+    -o-transition: opacity .6s;
+    transition: opacity .6s;
+}
+
 header{
     position: fixed;
     height: 60px;
-    top: 0; left: 0;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
     width: 100%;
+    max-width: 1244px;
     background-color: var(--bg-color);
     justify-content: space-between;
     padding: 0 20px;
@@ -78,10 +112,7 @@ h1 a{
 
 main{
     width: 100%;
-    max-width: 1440px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    max-width: 1240px;
 }
 
 nav{
@@ -231,10 +262,19 @@ nav{
     ---------------------------------------------------------------------------- MEDIA QUERY ---------------------------------------------------------------------
 ============================================================================================================================================================================ */
 @media screen and (min-width: 800px) {
+    main{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 3rem;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 100vh;
+    }
+
     header{
         align-items: center;
-        padding: 0 120px;
         height: 70px;
+        border-bottom: 1px solid rgba(0,0,0,0.15);
     }
 
     .logo svg:first-child{
@@ -243,7 +283,7 @@ nav{
 
     nav{
         display: flex;
-        height: 57px;
+        height: 60px;
         font-size: 1rem;
         margin-left: 4rem;
         margin-top: 3px;
@@ -251,7 +291,7 @@ nav{
     }
 
     nav ul{
-        height: 57px;
+        height: 60px;
     }
 
     .nav_link{
@@ -269,5 +309,101 @@ nav{
         border-bottom-color: var(--orange);
         font-weight: 700;
         color: var(--text-color);
+    }
+
+    .carousel{
+        width: 400px;
+    }
+
+    .my-slider div{
+        overflow: hidden;
+    }
+
+    .my-slider div img{
+        border-radius: 15px;
+    }
+
+    .thumbnail{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .thumbnail div{
+        width: 70px;
+        height: 67px;
+        margin-top: 1rem;
+        cursor: pointer;
+        transition: .4s;
+        border: 3px solid transparent;
+        border-radius: 10px;
+    }
+
+    .thumbnail div:not(:last-of-type){
+        margin-right: 40px;
+    }
+
+    .thumbnail div img{
+        border-radius: 8px;
+    }
+
+    .thumbnail div:hover,
+    .thumbnail div.active{
+        border-color: var(--orange);
+    }
+
+    .thumbnail div:hover img,
+    .thumbnail div.active img{
+        opacity: 0.4;
+    }
+
+    .checkout{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .price_section{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product_quantity{
+        width: 35%;
+    }
+
+    .add_btn{
+        width: 60%;
+        padding: 0;
+        height: 55px;
+    }
+
+    .subtitle{
+        font-size: 40px;
+        margin-bottom: 1.5rem;
+    }
+
+    .prev,
+    .next{
+        display: none;
+    }
+
+    .gallery{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .product{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 80%;
+    }
+
+    .product_quantity span:not(:nth-child(2)){
+        padding: 5px 8px;
     }
 }
