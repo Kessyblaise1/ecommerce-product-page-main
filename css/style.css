@@ -74,8 +74,6 @@ span{
 }
 
 
-element.style {
-}
 .lb-nav a.lb-prev {
     width: 34%;
     left: 0;
@@ -130,6 +128,54 @@ nav{
 
 .avatar img:hover{
     border: 2px solid var(--orange);
+}
+
+/* ============================ CART SECTION ================================= */
+.cart_container{
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 70px; right: 10px;
+    width: 370px;
+    height: 300px;
+    z-index: 10;
+    border-radius: 8px;
+    background-color: var(--bg-color);
+    box-shadow: 0px 12px 27px -10px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 12px 27px -10px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 12px 27px -10px rgba(0,0,0,0.75);
+}
+
+.cart_container.show_cart{
+    visibility: visible;
+    opacity: 1;
+}
+
+.cart_title{
+    padding: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+.cart_container .container{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 700;
+    color: var(--text-color-light);
+}
+
+.cart.active:before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 15px 0 15px;
+    border-color: var(--bg-color) transparent transparent transparent;
+    position: absolute;
+    bottom: -10px;
+    transform: rotate(180deg);
+    z-index: 20;
 }
 
 /* ============================ GALLERY SECTION ================================= */
@@ -348,7 +394,6 @@ nav{
         border-radius: 8px;
     }
 
-    .thumbnail div:hover,
     .thumbnail div.active{
         border-color: var(--orange);
     }
@@ -405,5 +450,11 @@ nav{
 
     .product_quantity span:not(:nth-child(2)){
         padding: 5px 8px;
+    }
+
+
+
+    .cart_container{
+        top: 70px;
     }
 }
