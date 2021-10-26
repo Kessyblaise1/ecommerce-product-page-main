@@ -1,0 +1,273 @@
+:root{
+    --text-color: hsl(220, 13%, 13%);
+    --text-color-light: hsl(219, 9%, 45%);
+    --lightbox-bg: hsl(0, 0%, 0%);
+    --bg-color: hsl(0, 0%, 100%);
+    --orange: hsl(26, 100%, 55%);
+    --pale-orange: hsl(26, 100%, 94%);
+    --grayish-blue: hsl(220, 14%, 75%);
+    --grayish-light-blue: hsl(223, 64%, 98%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color-light);
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.fcol{
+    display: flex;
+    flex-direction: column;
+}
+
+.frow{
+    display: flex;
+    flex-direction: row;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a, li{
+    text-decoration: none;
+    list-style: none;
+}
+
+svg{
+    cursor: pointer;
+}
+
+span{
+    display: inline-block;
+}
+
+header{
+    position: fixed;
+    height: 60px;
+    top: 0; left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 9;
+}
+
+.logo svg:nth-child(1){
+    margin: 5px 15px 0 0;
+}
+
+h1 a{
+    color: var(--text-color);
+}
+
+main{
+    width: 100%;
+    max-width: 1440px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+nav{
+    display: none;
+}
+
+.avatar img{
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    transition: .6s;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.avatar img:hover{
+    border: 2px solid var(--orange);
+}
+
+/* ============================ GALLERY SECTION ================================= */
+.carousel{
+    position: relative;
+}
+
+.prev,
+.next{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background-color: var(--bg-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 20px;
+}
+
+.next{
+    right: 0;
+}
+
+.thumbnail{
+    display: none;
+}
+
+
+/* ========================== PRODUCT DESCRIPTION AND PRICE =========================== */
+.product{
+    padding: 20px;
+}
+
+.title{
+    color: var(--orange);
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subtitle{
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-color);
+    margin: 10px 0;
+}
+
+.product_descritpion{
+    margin-top: 10px;
+}
+
+.price_section{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.box1{
+    align-items: center;
+}
+
+.current_price{
+    color: var(--text-color);
+    font-size: 28px;
+    font-weight: 700;
+    margin-right: 15px;
+}
+
+.discount{
+    padding: 2px 7px;
+    background-color: var(--pale-orange);
+    color: var(--orange);
+    font-size: .9rem;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.previous_price{
+    color: var(--grayish-blue);
+    font-weight: 600;
+}
+
+.product_quantity{
+    width: 100%;
+    background-color: var(--grayish-light-blue);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 2rem 0;
+    border-radius: 10px;
+}
+
+.product_quantity span:not(:nth-child(2)){
+    padding: 10px 15px;
+}
+
+.product_quantity span:nth-child(2){
+    font-weight: 700;
+}
+
+.add_btn{
+    width: 100%;
+    padding: 15px;
+    background-color: var(--orange);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    box-shadow: -1px 2px 30px -12px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 2px 30px -12px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 2px 30px -12px rgba(0,0,0,0.75);
+    transition: .6s;
+}
+
+.plus:hover,
+.minus:hover,
+.btn:hover{
+    opacity: .6;
+}
+
+.btn svg{
+    margin-right: 10px;
+    transform: scale(0.8);
+}
+
+
+/* ========================================================================================================================================================================
+    ---------------------------------------------------------------------------- MEDIA QUERY ---------------------------------------------------------------------
+============================================================================================================================================================================ */
+@media screen and (min-width: 800px) {
+    header{
+        align-items: center;
+        padding: 0 120px;
+        height: 70px;
+    }
+
+    .logo svg:first-child{
+        display: none;
+    }
+
+    nav{
+        display: flex;
+        height: 57px;
+        font-size: 1rem;
+        margin-left: 4rem;
+        margin-top: 3px;
+        align-items: center;
+    }
+
+    nav ul{
+        height: 57px;
+    }
+
+    .nav_link{
+        border-bottom: 5px solid transparent;
+        transition: .4s;
+        cursor: pointer;
+        padding-top: 16px;
+    }
+
+    .nav_link:not(:first-of-type){
+        margin-left: 30px;
+    }
+
+    .nav_link:hover{
+        border-bottom-color: var(--orange);
+        font-weight: 700;
+        color: var(--text-color);
+    }
+}
