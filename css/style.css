@@ -87,6 +87,17 @@ span{
     transition: opacity .6s;
 }
 
+.btn{
+    width: 100%;
+    padding: 15px;
+    background-color: var(--orange);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .6s;
+}
+
 header{
     position: fixed;
     height: 60px;
@@ -170,13 +181,13 @@ main{
     position: fixed;
     top: 70px; right: 10px;
     width: 370px;
-    height: 300px;
+    /* height: 300px; */
     z-index: 10;
     border-radius: 8px;
     background-color: var(--bg-color);
     box-shadow: 0px 12px 27px -10px rgba(0,0,0,0.75);
--webkit-box-shadow: 0px 12px 27px -10px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 12px 27px -10px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 12px 27px -10px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 12px 27px -10px rgba(0,0,0,0.75);
 }
 
 .cart_container.show_cart{
@@ -190,10 +201,8 @@ main{
 }
 
 .cart_container .container{
-    position: absolute;
-    left: 50%; top: 50%;
-    transform: translate(-50%, -50%);
-    font-weight: 700;
+    padding: 20px;
+    width: 100%;
     color: var(--text-color-light);
 }
 
@@ -209,6 +218,31 @@ main{
     bottom: -10px;
     transform: rotate(180deg);
     z-index: 20;
+}
+
+.cart_item{
+    margin: .85rem 0;
+    width: 100%;
+}
+
+.details{
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart_item_image{
+    height: 60px; width: 60px;
+    border-radius: 8px;
+}
+
+.info{
+    justify-content: space-between;
+}
+
+.cart_item_btn{
+    margin-top: 1rem;
+    padding: 20px;
 }
 
 /* ============================ GALLERY SECTION ================================= */
@@ -311,18 +345,9 @@ main{
 }
 
 .add_btn{
-    width: 100%;
-    padding: 15px;
-    background-color: var(--orange);
-    color: var(--bg-color);
-    border: none;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 16px;
     box-shadow: -1px 2px 30px -12px rgba(0,0,0,0.75);
     -webkit-box-shadow: -1px 2px 30px -12px rgba(0,0,0,0.75);
     -moz-box-shadow: -1px 2px 30px -12px rgba(0,0,0,0.75);
-    transition: .6s;
 }
 
 .plus:hover,
